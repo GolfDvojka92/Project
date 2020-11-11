@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1605024903 source:d:\programi\projekat1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"googledrive.h"
+
+1605118087 source:d:\programi\projekat1\googledrive.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"googledrive.h"
+
+1605025099 d:\programi\projekat1\googledrive.h
+

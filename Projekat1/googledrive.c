@@ -7,7 +7,7 @@ char simboli[]=", ./<>?;':[]{}-=_+`~!@#$%^&*()";
 FILE *fp;
 int ulogovan=0;
 
-int meni(account n)
+void meni(account n)
 {
     int a;
     if(ulogovan==0)
@@ -26,22 +26,18 @@ int meni(account n)
         do
         {
             printf("Unesite komandu:");
+            fflush(stdin);
             scanf("%d",&a);
-            if(a==1)
+            switch(a)
             {
-                registracija();
-            }
-            else if(a==2)
-            {
-                login();
-            }
-            else if(a==3)
-            {
-                return 0;
-            }
-            else
-            {
-                printf("Uneli ste nepostojecu komandu!\n");
+                case 1:
+                    registracija();
+                case 2:
+                    login();
+                case 3:
+                    exit(0);
+                default:
+                    printf("Uneli ste nepostojecu komandu!\n");
             }
         }
         while(a<1 || a>3);
@@ -57,34 +53,31 @@ int meni(account n)
         printf("| 2.Brisanje naloga                           | \n");
         printf("| 3.Logout                                    | \n");
         printf("| 4.Izlaz                                     | \n");
+        printf("| 5.Pristup disku                             | \n");
         printf("|                                             | \n");
         printf("|*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*| \n");
-        printf("Unesite komandu:");
         do
         {
+            printf("Unesite komandu:");
+            fflush(stdin);
             scanf("%d",&a);
-            if(a==1)
+            switch(a)
             {
-                editAccount(n);
-            }
-            else if(a==2)
-            {
-                removeAccount(n);
-            }
-            else if(a==3)
-            {
-                logout(n);
-            }
-            else if(a==4)
-            {
-                return 0;
-            }
-            else
-            {
-                printf("Uneli ste nepostojecu komandu! Pokusajte ponovo:");
+                case 1:
+                    editAccount();
+                case 2:
+                    removeAccount();
+                case 3:
+                    logout();
+                case 4:
+                    exit(0);
+                case 5:
+                    driveAccess(n);
+                default:
+                    printf("Uneli ste nepostojecu komandu!\n");
             }
         }
-        while(a<1 && a>4);
+        while(a<1 || a>5);
     }
 }
 
@@ -252,6 +245,7 @@ void registracija()
 
     printf("Uspesno ste se registrovali!\n\n");
     ulogovan=1;
+    system("cls");
     fclose(fp);
     meni(n);
 }
@@ -261,6 +255,8 @@ void login()
     char temp[100];
     int i;
     fp=fopen("nalozi.txt", "r+");
+
+    ///NIZ NALOGA
 
     account nalozi[100];
     int brNaloga=0;
@@ -288,6 +284,8 @@ void login()
         }
     }
 
+    ///USER ILI MAIL
+
     printf("Unesite nadimak ili mail adresu:");
     int redBr;
     NALOG:
@@ -310,6 +308,9 @@ void login()
             goto NALOG;
         }
     }
+
+    ///PASSWORD
+
     char pass[100];
     printf("Sifra:");
     SIFRA:
@@ -321,6 +322,8 @@ void login()
     }
     printf("Uspesno ste se ulogovali!\n");
     ulogovan=1;
+    system("pause");
+    system("cls");
     fclose(fp);
     meni(nalozi[redBr]);
 }
@@ -329,6 +332,8 @@ void logout(account n)
 {
     printf("Izlogovali ste se.\n\n");
     ulogovan=0;
+    system("pause");
+    system("cls");
     meni(n);
 }
 
@@ -553,6 +558,7 @@ void editAccount(account n)
         fprintf(fp,"\n");
     }
     printf("Restartujte aplikaciju da uvaze promene.\n");
+    system("cls");
     meni(n);
 }
 
@@ -640,5 +646,6 @@ void removeAccount(account n)
     brNaloga--;
     fclose(fp);
     ulogovan=0;
+    system("cls");
     meni(n);
 }

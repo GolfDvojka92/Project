@@ -1,15 +1,64 @@
 # depslib dependency file v1.0
-1605024903 source:d:\programi\projekat1\main.c
+1607207509 source:d:\programi\projekat1\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"googledrive.h"
 
-1605118087 source:d:\programi\projekat1\googledrive.c
+1607346348 source:d:\programi\projekat1\googledrive.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"googledrive.h"
 
-1605025099 d:\programi\projekat1\googledrive.h
+1607346520 d:\programi\projekat1\googledrive.h
+
+1607346496 source:d:\programi\projekat1\driveaccess.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"googledrive.h"
+
+1607249148 source:c:\users\aljosa\desktop\projekat\googledrive.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"googledrive.h"
+
+1607625119 c:\users\aljosa\desktop\projekat\googledrive.h
+
+1607110308 source:c:\users\aljosa\desktop\projekat\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"googledrive.h"
+
+1607639957 source:c:\users\aljosa\desktop\projekat\driveaccess.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"googledrive.h"
+
+1607281548 source:c:\users\stefan kalafatic\desktop\projekat\googledrive.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"googledrive.h"
+
+1607543613 c:\users\stefan kalafatic\desktop\projekat\googledrive.h
+
+1607142708 source:c:\users\stefan kalafatic\desktop\projekat\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"googledrive.h"
+
+1607542176 source:c:\users\stefan kalafatic\desktop\projekat\driveaccess.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"googledrive.h"
 
